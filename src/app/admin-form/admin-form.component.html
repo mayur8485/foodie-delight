@@ -112,7 +112,7 @@
         <div class="d-flex justify-content-center align-items-center">
             <button type="submit" class="btn btn-primary" (click)="onAddRestaurant()" *ngIf="!editMode" [disabled]="!form.valid">Add Restaurant</button>
             <!-- <button type="submit" class="btn btn-danger">Delete Restaurant</button> -->
-            <button type="submit" class="btn btn-primary" (click)="onEdit()" *ngIf="editMode">Update Restaurant</button>
+            <button type="button" class="btn btn-primary" (click)="onEdit()" *ngIf="editMode">Update Restaurant</button>
         </div>
     </form>
 </div>

@@ -10,8 +10,9 @@ import { Router } from '@angular/router';
 export class TableComponent {
   @Input() data: any;
 
-  dataChunks: any;
+  loading:boolean = true;
 
+  dataChunks: any;
   page: number = 0;
   noOfPages: any = [];
   recordsPerPage: number = 5;
@@ -20,6 +21,7 @@ export class TableComponent {
   constructor(private router: Router, private dataService: DataService) {
     this.dataService.dataSubject.subscribe((data) => {
       this.data = data;
+      this.loading = false;
       if (this.data) {
         this.noOfPages = Math.ceil(this.data.length / this.recordsPerPage) * 10;
         this.addPagination(1);
@@ -28,8 +30,10 @@ export class TableComponent {
   }
 
   ngOnInit(): void {
+    console.log("Onoint")
     this.data = this.dataService.getRestaurants();
     if (this.data) {
+      this.loading = false;
       this.noOfPages = Math.ceil(this.data.length / this.recordsPerPage) * 10;
       this.addPagination(1);
     }

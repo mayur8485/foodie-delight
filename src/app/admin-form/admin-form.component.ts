@@ -17,9 +17,11 @@ export class AdminFormComponent implements OnInit {
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.initForm();
 
     this.router.events.subscribe((value: any) => {
       if (value instanceof NavigationStart) {
+        this.initForm();
         if (value.url.includes("/adminForm/")) {
           this.editMode = true;
         } else {
@@ -28,17 +30,17 @@ export class AdminFormComponent implements OnInit {
       }
     })
 
-    this.initForm();
-
     this.route.params.subscribe((params: Params) => {
       const restaurantData = this.dataService.getRestaurant(+params['id']);
       if (restaurantData) {
+        this.initForm();
         this.editMode = true;
         this.restaurantName = restaurantData["restaurantName"];
         this.onsetRestaurant(restaurantData);
         this.disableFields();
       }
     })
+    
   }
 
   disableFields() {
@@ -48,6 +50,7 @@ export class AdminFormComponent implements OnInit {
 
   initForm() {
     this.form = new FormGroup({
+      id: new FormControl(""),
       firstName: new FormControl("", { validators: [Validators.required] }),
       lastName: new FormControl("", { validators: [Validators.required] }),
       panNumber: new FormControl("", { validators: [Validators.required, Validators.pattern('^([A-Z]){5}([0-9]){4}([A-Z]){1}$')] }),
@@ -89,7 +92,6 @@ export class AdminFormComponent implements OnInit {
 
   onEdit() {
     const data = this.form.getRawValue();
-    console.log(this.form);
     if (this.form.valid) {
       this.dataService.updateRestaurant(data);
       this.router.navigate(['../restaurantList'])
