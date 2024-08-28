@@ -30,6 +30,7 @@ export class DataService {
   }
 
   getRestaurants() {
+    this.put(this.data);
     if (!this.data) {
       this.get();
       return null
@@ -40,13 +41,13 @@ export class DataService {
   }
 
   getRestaurant(id: any) {
-    if(this.data){
+    if (this.data) {
       return this.data.find((element: any) => +element.id === +id);
     }
   }
 
   getRestaurantName(id: any) {
-    if(this.data){
+    if (this.data) {
       const data = this.getRestaurant(id);
       return data["restaurantName"]
     }
@@ -67,7 +68,7 @@ export class DataService {
     }
     if (index > -1) {
       this.data[index] = data;
-      this.put(data);
+      this.put(this.data);
     }
   }
 
