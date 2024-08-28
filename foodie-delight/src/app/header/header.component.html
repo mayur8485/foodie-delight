@@ -1,0 +1,9 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: bisque;">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/restaurantList"><h2>Foodie Delight</h2></a>
+    </div>
+    <button class="btn btn-tertiary text-nowrap mx-2" routerLink="/restaurantList">Home</button>
+    <button class="btn btn-tertiary text-nowrap mx-2" routerLink="/adminForm">Add Restaurant</button>
+    <button class="btn btn-tertiary text-nowrap mx-2" *ngIf="addFood" (click)="onAddFood()">Add Food</button>
+</nav>
+  

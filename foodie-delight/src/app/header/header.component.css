@@ -1,0 +1,10 @@
+/* .head-conatiner {
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+} */
+
+
+.btn {
+    border: 1px solid black;
+}
