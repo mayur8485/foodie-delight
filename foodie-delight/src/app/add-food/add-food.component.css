@@ -1,0 +1,42 @@
+.header {
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-form {
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.food-form {
+    width: 80%;
+}
+
+.thumnail {
+    width: 20%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+}
+
+.box {
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.heading {
+    margin-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
