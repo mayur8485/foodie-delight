@@ -1,0 +1,21 @@
+<div class="header" *ngIf="restaurantName">
+    <span style="font-size: 50px; border-bottom: 1px solid black;">{{restaurantName}}</span>
+</div>
+
+<div class="main d-flex flex-row flex-wrap">
+    <div class="box" *ngFor="let each of data['food']">
+        <div class="thumnail d-flex justify-content-center align-items-center">
+            <img [src]="each['image']" alt="image1">
+        </div>
+        <div class="chip-box">
+            <div class="chip-labels">
+                <h5>{{each["name"]}}</h5>
+                <span
+                    style="font-size: 12px;white-space: nowrap; overflow: hidden;text-overflow: ellipsis; display: inline-block; vertical-align: top;">{{each["description"]}}</span>
+            </div>
+            <div class="chip-price">
+                <h3><span style="font-size: 15px;">Rs.</span>{{each["price"]}}</h3>
+            </div>
+        </div>
+    </div>
+</div>

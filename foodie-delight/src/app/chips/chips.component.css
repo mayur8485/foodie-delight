@@ -1,0 +1,56 @@
+.header {
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    padding: 20px;
+}
+
+.box {
+    height: auto;
+    width: auto;
+    width: 315px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px;
+}
+
+.box:hover {
+    transform: scale(1.06);
+}
+
+.thumnail {
+    height: 250px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+
+.chip-box {
+    padding: 20px;
+    height: 100px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.chip-labels {
+    width: 200px;
+    height: 100%;
+    padding: 4px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chip-price {
+    width: 100px;
+    height: 100%;
+    border-radius: 15px;
+}
