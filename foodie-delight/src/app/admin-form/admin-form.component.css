@@ -1,0 +1,26 @@
+.header {
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-form {
+    padding: 30px;
+}
+
+.box {
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.heading {
+    margin-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+}
+
+input.ng-invalid.ng-touched,textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
+}

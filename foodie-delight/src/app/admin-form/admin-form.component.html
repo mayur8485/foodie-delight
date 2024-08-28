@@ -1,0 +1,118 @@
+<div class="header" *ngIf="restaurantName">
+    <span style="font-size: 50px; border-bottom: 1px solid black;">{{restaurantName}}</span>
+</div>
+
+<div class="admin-form">
+    <form [formGroup]="form" class="form-group">
+        <div class="box">
+            <div class="heading">
+                <h3>Owner's Details</h3>
+            </div>
+            <div class="row my-2">
+                <div class="col-md-4">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" formControlName="firstName">
+                </div>
+                <div class="col-md-4">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" formControlName="lastName">
+                </div>
+                <div class="col-md-4">
+                    <label for="panNumber">Pan Number</label>
+                    <input type="text" class="form-control" id="panNumber" placeholder="Enter Pan Number" formControlName="panNumber">
+                </div>
+            </div>
+
+            <div class="row my-2">
+                <div class="col-md-5">
+                    <label for="ownerAddress">Address</label>
+                    <input type="text" class="form-control" id="ownerAddress" placeholder="1234 Main St" formControlName="ownerAddress">
+                </div>
+                <div class="col-md-4">
+                    <label for="ownerAddress2">Address 2</label>
+                    <input type="text" class="form-control" id="ownerAddress2" placeholder="Apartment, studio, or floor" formControlName="ownerAddress2">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="ownermobileNo">Mobile No</label>
+                    <input type="text" class="form-control" id="ownermobileNo" placeholder="9876543210" formControlName="ownermobileNo">
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-md-4">
+                    <label for="ownerState">State</label>
+                    <input type="text" class="form-control" id="ownerState" placeholder="Enter the state here" formControlName="ownerState">
+                </div>
+                <div class="col-md-4">
+                    <label for="ownerCity">City</label>
+                    <input type="text" class="form-control" id="ownerCity" placeholder="Enter the city here" formControlName="ownerCity">
+                </div>
+                <div class="col-md-4">
+                    <label for="ownerPincode">Pincode</label>
+                    <input type="text" class="form-control" id="ownerPincode" placeholder="Enter the pincode here" formControlName="ownerPincode">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="box my-3">
+            <div class="heading">
+                <h3>Restaurant's Details</h3>
+            </div>
+            <div class="row my-2">
+                <div class="col-md-6">
+                    <label for="restaurantName">Restaurant Name</label>
+                    <input type="text" class="form-control" id="restaurantName" placeholder="Enter Restaurant Name" formControlName="restaurantName">
+                </div>
+                <!-- <div class="col-md-4">
+                    <label for="restaurantLogo">Restaurant Logo</label>
+                    <input type="text" class="form-control" id="restaurantLogo" placeholder="Enter Restaurant Logo">
+                </div> -->
+                <div class="col-md-6">
+                    <label for="gstNo">GST Number</label>
+                    <input type="text" class="form-control" id="gstNo" placeholder="Enter GST Number" formControlName="gstNo">
+                </div>
+            </div>
+
+            <div class="row my-2">
+                <div class="col-md-12">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" placeholder="Add description about your restaurant" id="description" formControlName="description"></textarea>
+                </div>
+            </div>
+
+            <div class="row my-2">
+                <div class="col-md-6">
+                    <label for="restaurantAddress">Address</label>
+                    <input type="text" class="form-control" id="restaurantAddress" placeholder="1234 Main St" formControlName="restaurantAddress">
+                </div>
+                <div class="col-md-6">
+                    <label for="restaurantAddress2">Address 2</label>
+                    <input type="text" class="form-control" id="restaurantAddress2" placeholder="Apartment, studio, or floor" formControlName="restaurantAddress2">
+                </div>
+                
+            </div>
+            <div class="row my-2">
+                <div class="col-md-4">
+                    <label for="restaurantState">State</label>
+                    <input type="text" class="form-control" id="restaurantState" placeholder="Enter the state here" formControlName="restaurantState">
+                </div>
+                <div class="col-md-4">
+                    <label for="restaurantCity">City</label>
+                    <input type="text" class="form-control" id="restaurantCity" placeholder="Enter the city here" formControlName="restaurantCity">
+                </div>
+                <div class="col-md-4">
+                    <label for="restaurantPincode">Pincode</label>
+                    <input type="text" class="form-control" id="restaurantPincode" placeholder="Enter the pincode here" formControlName="restaurantPincode">
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <button type="submit" class="btn btn-primary" (click)="onAddRestaurant()" *ngIf="!editMode" [disabled]="!form.valid">Add Restaurant</button>
+            <!-- <button type="submit" class="btn btn-danger">Delete Restaurant</button> -->
+            <button type="submit" class="btn btn-primary" (click)="onEdit()" *ngIf="editMode">Update Restaurant</button>
+        </div>
+    </form>
+</div>
