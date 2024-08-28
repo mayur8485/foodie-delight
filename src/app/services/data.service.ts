@@ -30,7 +30,6 @@ export class DataService {
   }
 
   getRestaurants() {
-    this.put(this.data);
     if (!this.data) {
       this.get();
       return null
